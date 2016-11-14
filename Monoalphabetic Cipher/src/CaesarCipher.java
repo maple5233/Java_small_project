@@ -1,15 +1,17 @@
-import java.util.Scanner;
-
 /**
+ * 移位密码
  * Created by hongjiyao_2014150120 on 16-9-21.
  */
+
+import java.util.Scanner;
+
 public class CaesarCipher {
     private static String M;// 明文
     private static String C;// 密文
     private static final int key = 3;// 移位密钥
     private static final int num = 26;// 字母表长度
 
-    public static void Encryption() {
+    private static void Encryption() {
         StringBuffer buf = new StringBuffer();
         for (int i = 0; i < M.length(); i++) {
             char m = M.charAt(i);
@@ -26,7 +28,7 @@ public class CaesarCipher {
         C = buf.toString();
     }
 
-    public static void Decryption() {
+    private static void Decryption() {
         StringBuffer buf = new StringBuffer();
         for (int i = 0; i < C.length(); i++) {
             char c = C.charAt(i);
@@ -43,7 +45,7 @@ public class CaesarCipher {
         M = buf.toString();
     }
 
-    public static void display() {
+    private static void display() {
         System.out.print("明文是" + M + "\t");
         System.out.println("密文是" + C);
     }

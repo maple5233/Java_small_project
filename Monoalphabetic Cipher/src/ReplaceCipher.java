@@ -1,9 +1,11 @@
+/**
+ * 置换密码
+ * Created by hongjiyao_2014150120 on 16-9-21.
+ */
+
 import java.util.HashMap;
 import java.util.Scanner;
 
-/**
- * Created by hongjiyao_2014150120 on 16-9-21.
- */
 public class ReplaceCipher {
     private static String M;// 明文
     private static String C;// 密文
@@ -11,7 +13,7 @@ public class ReplaceCipher {
     private static HashMap<Character, Character> _K;// 解密替换表
     private static final int num = 26;// 字母表长度
 
-    public static void initKey() {// 随机生成替换表
+    private static void initKey() {// 随机生成替换表
         K = new HashMap<Character, Character>();
         _K = new HashMap<Character, Character>();
         while (K.size() < num) {// 生成大写字母替换表
@@ -34,7 +36,7 @@ public class ReplaceCipher {
         }
     }
 
-    public static void displayKey() {
+    private static void displayKey() {
         System.out.println("加密替换表:");
         for (int i = 0; i < num; i++) {
             char big = (char) ('A' + i);
@@ -43,7 +45,7 @@ public class ReplaceCipher {
         }
     }
 
-    public static void Encryption() {
+    private static void Encryption() {
         if (M == null) return;
         StringBuffer buf = new StringBuffer();
         for (int i = 0; i < M.length(); i++) {
@@ -57,7 +59,7 @@ public class ReplaceCipher {
         C = buf.toString();
     }
 
-    public static void Decryption() {
+    private static void Decryption() {
         if (C == null) return;
         StringBuffer buf = new StringBuffer();
         for (int i = 0; i < C.length(); i++) {
@@ -71,7 +73,7 @@ public class ReplaceCipher {
         M = buf.toString();
     }
 
-    public static void display() {
+    private static void display() {
         System.out.print("明文是" + M + "\t");
         System.out.println("密文是" + C);
     }
