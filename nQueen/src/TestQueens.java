@@ -1,12 +1,10 @@
 /**
+ * 测试棋盘是否合法的类
  * Created by hongjiyao_2014150120 on 16-10-19.
  */
 
 import java.util.Scanner;
 
-/**
- * 测试棋盘是否合法的类
- */
 public class TestQueens {
     private static final int QUEENS_NUM = 8;
     private static int[] checkerboard = new int[QUEENS_NUM]; //棋盘

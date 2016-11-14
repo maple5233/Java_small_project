@@ -1,16 +1,15 @@
 /**
+ * 解决n皇后问题的类
  * Created by hongjiyao_2014150120 on 16-9-28.
  */
 
 import java.util.Date;
 
-/**
- * 解决八皇后问题的类
- */
 public class ManyQueens {
     private static final int QUEEN_NUM = 8;
     private static int[] queens = new int[QUEEN_NUM]; // 皇后结果保存数组
     private static int numOfAns = 0; // 解的个数
+    private static final double MS_TO_S = 1000.0;
 
     /***
      * 摆放皇后的函数模块 回溯地去尝试所有的可能解
@@ -64,6 +63,6 @@ public class ManyQueens {
         check(0);
         long end = new Date().getTime();
         System.out.println("共有解" + numOfAns + "个");
-        System.out.println("花费" + (end - begin) / 1000.0 + "s");
+        System.out.println("花费" + (end - begin) / MS_TO_S + "s");
     }
 }
