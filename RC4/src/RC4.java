@@ -50,7 +50,11 @@ public class RC4 {
      * @return 明文或者密文
      */
     private static String codeTheString(String P) {
-        int i = 0, j = 0, l = 0, t = 0, tmp = 0;
+        int i = 0;
+        int j = 0;
+        int l = 0;
+        int t;
+        int tmp;
         char k;
         StringBuilder K = new StringBuilder();
         while (l < P.length()) {
