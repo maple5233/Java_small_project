@@ -2,21 +2,22 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
+ * 快速排序
  * Created by hongjiyao_2014150120 on 16-9-13.
  */
 public class QuickSort {
     private static final int testNum = 20;
     private static final int rank = 1000; // 随机数的大小区间
 
-    public static void quickSort(int[] arr) {
-        qsort(arr, 0, arr.length - 1);
+    private static void quickSort(int[] arr) {
+        qSort(arr, 0, arr.length - 1);
     }
 
-    private static void qsort(int[] arr, final int low, final int high) {
+    private static void qSort(int[] arr, final int low, final int high) {
         if (low < high) {
             int pivot = partition(arr, low, high);        //将数组分为两部分
-            qsort(arr, low, pivot - 1);                   //递归排序左子数组
-            qsort(arr, pivot + 1, high);                  //递归排序右子数组
+            qSort(arr, low, pivot - 1);                   //递归排序左子数组
+            qSort(arr, pivot + 1, high);                  //递归排序右子数组
         }
     }
 

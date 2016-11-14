@@ -2,6 +2,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
+ * 归并排序
  * Created by hongjiyao_2014150120 on 16-9-13.
  */
 public class MergeSort {
