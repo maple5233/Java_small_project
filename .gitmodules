@@ -1,0 +1,3 @@
+[submodule "design pattern"]
+	path = design pattern
+	url = git@github.com:maple5233/Design-pattern-learn.git
