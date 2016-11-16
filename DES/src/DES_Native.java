@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Date;
 import java.util.Objects;
 
 public class DES_Native {
@@ -288,6 +289,7 @@ public class DES_Native {
             File original = new File(path + "明文.all");
             File cipher = new File(path + "密文.all");
             File _original = new File(path + "解密文结果.all");
+            long fileSize = original.length();
 
             FileInputStream streamFromP = new FileInputStream(original);
             FileOutputStream streamToM = new FileOutputStream(cipher);
@@ -302,6 +304,7 @@ public class DES_Native {
             /**
              * 加密过程
              */
+            long begin = new Date().getTime();
             while ((readLength = streamFromP.read(buffP)) != -1) {
                 time++; // 记录读入次数(明文长度除以8,进一法)
                 Des_Run(buffM, buffP, ENCODE);
@@ -322,6 +325,10 @@ public class DES_Native {
                     streamTo_P.write(buffP, 0, hail); //最后一次只写入有效位
                 }
             }
+            long end = new Date().getTime();
+            System.out.println("文件大小："+fileSize+"字节，也就是"+ (double)(fileSize/1024/1024) + "MB");
+            System.out.println("加密耗时："+ (end-begin) +"ms，也就是"+ (double)((end-begin)/1000) + "s");
+            System.out.println("加密速度："+ (double)(fileSize*1000/1024/(end-begin))+"kbits/s");
         } catch (Exception e) {
             e.printStackTrace();
         }
